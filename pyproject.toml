@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "forgejury"
+version = "0.1.0"
+description = "A lie detector for AI coding agents: re-checks what a build claims against what is actually on disk, and triangulates parallel builds against each other."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+authors = [{ name = "zerochance1907" }]
+keywords = ["ai-agents", "coding-agents", "llm", "verification", "evaluation", "ci", "multi-agent"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Topic :: Software Development :: Quality Assurance",
+    "Topic :: Software Development :: Testing",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.scripts]
+forgejury = "forgejury.__main__:main"
+
+[project.urls]
+Homepage = "https://github.com/zerochance1907/forgejury"
+"Built by" = "https://github.com/zerochance1907/agent-forge"
+
+[tool.setuptools]
+packages = ["forgejury"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
